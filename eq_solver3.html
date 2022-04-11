@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="eq.css" />
+    <title>Equation Solver</title>
+
+    <script>
+        function solve() {
+            let A1 = Number(document.getElementById('valA').value)
+            let B1 = Number(document.getElementById('valB').value)
+            let C1 = Number(document.getElementById('valC').value)
+            let A2 = Number(document.getElementById('valA1').value)
+            let B2 = Number(document.getElementById('valB1').value)
+            let C2 = Number(document.getElementById('valC1').value)
+
+            let x = ((C1 * B2) + -1 * (C2 * B1)) / ((A1 * B2) + -1 * (A2 * B1))
+            let y = ((A1 * C2) + -1 * (A2 * C1)) / ((A1 * B2) + -1 * (A2 * B1))
+
+            document.getElementById("answer").innerHTML =
+                "Solving: <br>" + A1 + "x + " + B1 + 'y =' + C1 + '<br>' + A2 + "x + " + B2 + 'y =' + C2 + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br> x = ' + x + '<br>' + 'y = ' + y
+
+            document.images[0].style.width = ((x * x / x) * 100) + 'px';
+            document.images[0].style.height = ((y * y / y) * 100) + 'px';
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Solving</h1>
+    <h3>Ax + By = C</h3>
+    <h3>Dx + Ey = F</h3>
+    <div class="input-item">
+        Value of A: <input id="valA" value=0> Value of B: <input id="valB" value=0>
+    </div>
+    <div class="input-item">
+        Value of C: <input id="valC" value=0> Value of D: <input id="valA1" value=0>
+    </div>
+    <div class="input-item">
+        Value of E: <input id="valB1" value=0> Value of F: <input id="valC1" value=0>
+        <input class="my-button" type="button" onclick="solve()" value="Solve" />
+    </div>
+
+    <p id="answer"></p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdDyN408oRUiuBOm82ljnH2KLRvuHDyPjcndyTIDfzPdk0C23tbku8gzgC5r3dxjoYk9c:www.cdagler.com/imgs/myPic.gif&usqp=CAU" alt="dabler" id="lord" />
+</body>
+
+</html>
